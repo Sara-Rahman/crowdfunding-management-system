@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'CFMS'),
 
     /*
     |--------------------------------------------------------------------------
@@ -54,9 +54,9 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'http://localhost/crowdfunding-management-system/public'),
 
-    'asset_url' => env('ASSET_URL', null),
+    'asset_url' => env('ASSET_URL', 'http:xyz.com'),
 
     /*
     |--------------------------------------------------------------------------
@@ -69,7 +69,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Asia/Dhaka',
 
     /*
     |--------------------------------------------------------------------------
