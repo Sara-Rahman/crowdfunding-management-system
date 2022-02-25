@@ -45,6 +45,7 @@ class createAdmin extends Command
                 'name'=>'admin',
                 'email'=>'admin@gmail.com',
                 'password'=>bcrypt('123'),
+                'role'=>'admin',
     
             ]);
             $this->info("created admin user successfully");
