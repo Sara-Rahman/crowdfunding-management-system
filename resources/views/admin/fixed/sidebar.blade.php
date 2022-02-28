@@ -53,9 +53,9 @@
             <li class="side-nav-title side-nav-item">Apps</li>
 
             <li class="side-nav-item">
-                <a href="#" class="side-nav-link">
+                <a href="{{route('cause')}}" class="side-nav-link">
                     <i class="uil-copy-alt"></i>
-                    <span> Demo </span>
+                   <span> Cause </span>
                 </a>
             </li>
 
