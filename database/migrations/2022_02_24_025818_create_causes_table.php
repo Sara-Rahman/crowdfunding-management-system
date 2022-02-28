@@ -15,12 +15,14 @@ return new class extends Migration
     {
         Schema::create('causes', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('category_id');
+            $table->unsignedBigInteger('category_id')->nullable();
             $table->string('name');
             $table->string('details');
+            $table->string('category');
             $table->double('target_amount');
             $table->string('location');
             $table->string('contact');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }
