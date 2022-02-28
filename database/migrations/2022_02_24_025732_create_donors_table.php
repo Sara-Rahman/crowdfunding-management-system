@@ -16,14 +16,14 @@ return new class extends Migration
         Schema::create('donors', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email');
+            $table->string('email')->unique();
             $table->string('password');
             $table->string('gender');
             $table->string('city');
             $table->string('address');
             $table->double('mobile');
             $table->string('occupation');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }
