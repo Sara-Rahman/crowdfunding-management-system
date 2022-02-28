@@ -2,7 +2,7 @@
     <!-- LOGO -->
     <a href="index.html" class="logo text-center logo-light">
         <span class="logo-lg">
-            <img src="{{url('backend/images/logo.png')}}" alt="" height="16">
+            <img src="{{url('backend/images/fund.png')}}" alt="" height="90">
         </span>
         <span class="logo-sm">
             <img src="{{url('backend/images/logo_sm.png')}}" alt="" height="16">
@@ -55,14 +55,23 @@
             <li class="side-nav-item">
                 <a href="{{route('cause')}}" class="side-nav-link">
                     <i class="uil-copy-alt"></i>
+
                    <span> Cause </span>
+
                 </a>
             </li>
 
             <li class="side-nav-item">
-                <a href="apps-chat.html" class="side-nav-link">
+                <a href="{{route('list.donor')}}" class="side-nav-link">
+                    <i class="uil-copy-alt"></i>
+                    <span> Donor </span>
+                </a>
+            </li>
+
+            <li class="side-nav-item">
+                <a href="{{route('create.donation')}}" class="side-nav-link">
                     <i class="uil-comments-alt"></i>
-                    <span> Demo </span>
+                    <span> Donation </span>
                 </a>
             </li>
 
