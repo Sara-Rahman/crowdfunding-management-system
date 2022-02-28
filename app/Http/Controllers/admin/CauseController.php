@@ -48,8 +48,9 @@ class CauseController extends Controller
             'image'=>$image_name
 
         ]);
-        Toastr::success('Cause Updated Successfully', 'success');
-        return redirect()->back()->with('success','Cause has been created successfully');
+        Toastr::success('Cause Created Successfully', 'success');
+        return redirect()->route('cause');
+        
 
 
     }
@@ -87,7 +88,7 @@ class CauseController extends Controller
 
         ]);
         Toastr::success('Cause Updated Successfully', 'success');
-        return redirect()->route('cause')->with('success','Cause has been updated successfully');
+        return redirect()->route('cause');
 
     }
     public function deleteCause($cause_id)
