@@ -7,7 +7,6 @@ use App\Http\Controllers\admin\CauseController;
 use App\Http\Controllers\Admin\UserController as AdminUserController;
 use App\Http\Controllers\Admin\DonorController;
 use App\Http\Controllers\Website\UserController;
-use App\Http\Controllers\Admin\UserController as AdminUserController;
 
 /*
 |--------------------------------------------------------------------------
