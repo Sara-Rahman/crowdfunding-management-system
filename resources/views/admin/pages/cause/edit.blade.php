@@ -29,17 +29,25 @@
               <input type="text" value="{{$cause->details}}" class="form-control" id="details" name="details" placeholder="Enter Cause Details">
           </div>
 
+
+       
           <div class="form-group col-6 mt-2">
             <label class="form-group col-6 mt-2" for="category">Select Cause Category</label>
 
-<select name="category" id="category" class="form-control">
-  <option>{{$cause->category}}</option>
-  <option value="Medical">Medical</option>
-  <option value="Food">Food</option>
-  <option value="Flood">Flood</option>
-  <option value="Others">Others</option>
-</select>
-        </div>
+            <select name="category_id" class="form-control" id="exampleInputRank">
+            
+              @foreach ($categories as $item)
+            
+                  <option 
+                      @if ($cause->category_id==$item->id)
+                          selected
+                      @endif
+                     
+                      value="{{$item->id}}">{{$item->name}}</option>
+                  
+              @endforeach
+          </select>
+          </div>
         <div class="form-group col-6 mt-2">
             <label for="location">Location</label>
             <input type="text" value="{{$cause->location}}" class="form-control" id="location" name="location" placeholder="Enter Location">

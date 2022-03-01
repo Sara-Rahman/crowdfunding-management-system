@@ -6,7 +6,6 @@ use App\Http\Controllers\admin\AdminController;
 use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\admin\VolunteerController;
 use App\Http\Controllers\admin\UserController as AdminUserController;
-
 use App\Http\Controllers\admin\CauseController;
 use App\Http\Controllers\admin\DonorController;
 use App\Http\Controllers\website\UserController;
