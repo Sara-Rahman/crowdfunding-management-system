@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('volunteers', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('cause_id');
-            $table->string('cause_location');
+            $table->unsignedBigInteger('cause_id')->nullable();
+            $table->string('cause_location')->nullable();
             $table->string('name');
             $table->string('email');
             $table->string('password');
@@ -24,9 +24,9 @@ return new class extends Migration
             $table->string('city');
             $table->string('address');
             $table->double('mobile');
-            $table->double('education');
+            $table->string('education');
             $table->string('occupation');
-            $table->string('image');
+            $table->string('image')->nullable;
             $table->timestamps();
         });
     }
