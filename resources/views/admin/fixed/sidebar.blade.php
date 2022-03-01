@@ -126,11 +126,11 @@
                 <div class="collapse" id="sidebarPages">
                     <ul class="side-nav-second-level">
                         <li>
-                            <a href="pages-profile.html">Demo1</a>
+                            <a href="{{route('show.volunteer')}}">Voluenteer</a>
                         </li>
                         
                         <li>
-                            <a href="pages-maintenance.html">Demo2</a>
+                            <a href="{{route('show.category')}}">Category</a>
                         </li>
                         <li class="side-nav-item">
                             <a data-bs-toggle="collapse" href="#sidebarPagesAuth" aria-expanded="false" aria-controls="sidebarPagesAuth">
