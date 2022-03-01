@@ -1,6 +1,7 @@
 @extends('admin.master')
 @section('content')
 <h1>Donor List</h1>
+<hr>
 <a href="{{route('create.donor')}}" class="btn btn-primary">Create Donor</a><br><br>
 
         @if(session()->has('message'))

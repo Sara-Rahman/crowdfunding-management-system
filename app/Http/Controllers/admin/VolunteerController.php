@@ -6,6 +6,9 @@ use App\Models\Volunteer;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+use Brian2694\Toastr\Facades\Toastr;
+
+
 class VolunteerController extends Controller
 {
     //showing Volunter List
@@ -14,7 +17,9 @@ class VolunteerController extends Controller
     {
      
         $volunteers=Volunteer::all();
-      return view('admin.pages.volunteer.showvolunteerlist',compact('volunteers'));
+
+      return view('admin.pages.volunteer.list',compact('volunteers'));
+
  
      }
 
@@ -22,7 +27,9 @@ class VolunteerController extends Controller
     public function creatVolunteer()
     {
      
-      return view('admin.pages.volunteer.createvolunteer');
+
+      return view('admin.pages.volunteer.create');
+
  
      }
 
@@ -73,7 +80,10 @@ class VolunteerController extends Controller
             'mobile'=>$request->mobile,
             'image'=>$image_name
         ]);
-        return redirect()->back()->with('success','Volunteer  has been registred successfully.');
+
+        Toastr::success('Volunteer Created Successfully', 'success');
+        return redirect()->route('show.volunteer');
+
  
      }
     }
@@ -83,14 +93,18 @@ class VolunteerController extends Controller
      public function ViewVolunteerProfile($id)
      {
          $volunteers=Volunteer::find($id);
-         return view('admin.pages.volunteer.viewvolunteer', compact('volunteers'));
+
+         return view('admin.pages.volunteer.view', compact('volunteers'));
+
      }
    
      //Update profile of Volunteer
      public function editVolunteerProfile($volunteer_id)
      {
          $volunteers=Volunteer::find($volunteer_id);
-         return view('admin.pages.volunteer.updatevolunteer',compact('volunteers'));
+
+         return view('admin.pages.volunteer.edit',compact('volunteers'));
+
      }
      public function UpdateVolunteerProfile(Request $request,$volunteer_id)
      {
@@ -125,15 +139,24 @@ class VolunteerController extends Controller
               
     
         ]);
+
+        Toastr::success('Volunteer Updated Successfully', 'success');
       
-        return redirect()->back()->with('success','Volunteer  has been updated successfully.');
+        return redirect()->route('show.volunteer');
+
      }
 
      //Delete profile of Volunteer
      public function DeleteVolunteerProfile($id)
      {
        Volunteer::find($id)->delete();
+
+       Toastr::error('Volunteer Deleted Successfully');
+
          return redirect()->back();
+     }
+
+
      }
 
 
