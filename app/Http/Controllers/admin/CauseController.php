@@ -66,7 +66,8 @@ class CauseController extends Controller
     public function editCause($cause_id)
     {
         $cause=Cause::find($cause_id);
-        return view('admin.pages.cause.edit',compact('cause'));
+        $categories=Category::all();
+        return view('admin.pages.cause.edit',compact('cause','categories'));
 
     }
     public function updateCause(Request $req,$cause_id)
@@ -83,7 +84,7 @@ class CauseController extends Controller
         $cause->update([
             'name'=>$req->name,
             'details'=>$req->details,
-            'category'=>$req->category,
+            'category_id'=>$req->category_id,
             'location'=>$req->location,
             'contact'=>$req->contact,
             'target_amount'=>$req->target_amount,
