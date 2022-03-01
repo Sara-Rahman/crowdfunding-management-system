@@ -53,45 +53,39 @@
             <li class="side-nav-title side-nav-item">Apps</li>
 
             <li class="side-nav-item">
-                <a href="{{route('cause')}}" class="side-nav-link">
+                <a href="{{route('show.category')}}" class="side-nav-link">
                     <i class="uil-copy-alt"></i>
-
-                   <span> Cause </span>
-
+                   <span> Category </span>
                 </a>
             </li>
-
+            <li class="side-nav-item">
+                <a href="{{route('cause.list')}}" class="side-nav-link">
+                    <i class="uil-copy-alt"></i>
+                   <span> Cause </span>
+                </a>
+            </li>
             <li class="side-nav-item">
                 <a href="{{route('list.donor')}}" class="side-nav-link">
                     <i class="uil-copy-alt"></i>
-                    <span> Donor </span>
+                   <span> Donor </span>
                 </a>
             </li>
 
             <li class="side-nav-item">
                 <a href="{{route('create.donation')}}" class="side-nav-link">
-                    <i class="uil-comments-alt"></i>
+                    <i class="uil-copy-alt"></i>
                     <span> Donation </span>
                 </a>
             </li>
 
             <li class="side-nav-item">
-                <a data-bs-toggle="collapse" href="#sidebarEcommerce" aria-expanded="false" aria-controls="sidebarEcommerce" class="side-nav-link">
-                    <i class="uil-store"></i>
-                    <span> Demo </span>
-                    <span class="menu-arrow"></span>
+                <a href="{{route('show.volunteer')}}" class="side-nav-link">
+                    <i class="uil-comments-alt"></i>
+                    <span> Volunteer </span>
                 </a>
-                <div class="collapse" id="sidebarEcommerce">
-                    <ul class="side-nav-second-level">
-                        <li>
-                            <a href="apps-ecommerce-products.html">Demo1</a>
-                        </li>
-                        <li>
-                            <a href="apps-ecommerce-products-details.html">Demo2</a>
-                        </li>
-                    </ul>
-                </div>
             </li>
+
+            
 
             
 
@@ -134,13 +128,7 @@
                 </a>
                 <div class="collapse" id="sidebarPages">
                     <ul class="side-nav-second-level">
-                        <li>
-                            <a href="pages-profile.html">Demo1</a>
-                        </li>
-                        
-                        <li>
-                            <a href="pages-maintenance.html">Demo2</a>
-                        </li>
+
                         <li class="side-nav-item">
                             <a data-bs-toggle="collapse" href="#sidebarPagesAuth" aria-expanded="false" aria-controls="sidebarPagesAuth">
                                 <span> Demo3 </span>

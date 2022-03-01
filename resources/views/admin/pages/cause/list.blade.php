@@ -1,15 +1,11 @@
 @extends('admin.master')
 @section('content')
-<h1>Cause</h1>
+<h1>Cause List</h1>
 <hr>
-<a href="{{route('create.cause')}}"><button class="btn btn-primary">Create Cause</button></a>
-<h1>Cause List</h1><br>
-@if(session()->has('success'))
-                  <p class="alert alert-success">
-                    {{session()->get('success')}}
-                  </p>
-  @endif
-  <div> 
+<a href="{{route('create.cause')}}"><button class="btn btn-primary">Create Cause</button></a><br><br>
+
+
+<div> 
 <table class="table table-bordered">
     <thead>
       <tr>

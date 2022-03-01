@@ -12,12 +12,12 @@ class CauseController extends Controller
     public function cause()
     {
         $causelist=Cause::all();
-        return view('admin.cause.cause',compact('causelist'));
+        return view('admin.pages.cause.list',compact('causelist'));
 
     }
     public function createCause()
     {
-        return view('admin.cause.create-cause');
+        return view('admin.pages.cause.create');
     }
     public function storeCause(Request $req)
     {
@@ -49,7 +49,7 @@ class CauseController extends Controller
 
         ]);
         Toastr::success('Cause Created Successfully', 'success');
-        return redirect()->route('cause');
+        return redirect()->route('cause.list');
         
 
 
@@ -57,13 +57,13 @@ class CauseController extends Controller
     public function viewCause($cause_id)
     {
         $cause=Cause::find($cause_id);
-        return view('admin.cause.view-cause',compact('cause'));
+        return view('admin.pages.cause.view',compact('cause'));
 
     }
     public function editCause($cause_id)
     {
         $cause=Cause::find($cause_id);
-        return view('admin.cause.edit-cause',compact('cause'));
+        return view('admin.pages.cause.edit',compact('cause'));
 
     }
     public function updateCause(Request $req,$cause_id)
@@ -88,13 +88,15 @@ class CauseController extends Controller
 
         ]);
         Toastr::success('Cause Updated Successfully', 'success');
-        return redirect()->route('cause');
+        return redirect()->route('cause.list');
 
     }
     public function deleteCause($cause_id)
     {
         Cause::find($cause_id)->delete();
-        return redirect()->back()->with('success','Cause has been deleted!');
+        Toastr::error('Cause Deleted Successfully');
+
+        return redirect()->back();
 
 
     }

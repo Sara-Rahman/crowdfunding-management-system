@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Models\Donor;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Brian2694\Toastr\Facades\Toastr;
 
 class DonorController extends Controller
 {
@@ -56,7 +57,9 @@ class DonorController extends Controller
             'occupation'=>$request->occupation,
             'image'=>$image_name
         ]);
-        return redirect()->route('list.donor')->with('message','Donor Created Successfully');
+        Toastr::success('Donor Created Successfully', 'success');
+
+        return redirect()->route('list.donor');
     }
 
     public function DonorEdit($donor_id)
@@ -77,13 +80,18 @@ class DonorController extends Controller
             'mobile'=>$request->mobile,
             'occupation'=>$request->occupation,
         ]);
-        return redirect()->route('list.donor')->with('message','Donor Updated Successfully'); 
+        Toastr::success('Category Created Successfully', 'success');
+
+        return redirect()->route('list.donor'); 
     }
 
     public function DonorDelete($donor_id)
     {
         Donor::find($donor_id)->delete();
-        return redirect()->back()->with('delete','Donor Deleted Successfully'); 
+        Toastr::error('Donor Deleted Successfully');
+
+
+        return redirect()->back(); 
     }
 
 }
