@@ -53,8 +53,7 @@ class createAdmin extends Command
         } catch(Exception $e) {
             $this->info($e->getMessage());
             
-        }
-        
+        } 
         // return 0;
     }
 }
