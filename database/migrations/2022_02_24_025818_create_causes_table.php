@@ -18,7 +18,6 @@ return new class extends Migration
             $table->unsignedBigInteger('category_id')->nullable();
             $table->string('name');
             $table->string('details');
-            $table->string('category');
             $table->double('target_amount');
             $table->string('location');
             $table->string('contact');

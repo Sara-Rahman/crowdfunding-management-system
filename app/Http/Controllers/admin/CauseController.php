@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Models\Cause;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Brian2694\Toastr\Facades\Toastr;
@@ -11,13 +12,15 @@ class CauseController extends Controller
 {
     public function cause()
     {
-        $causelist=Cause::all();
+        $causelist=Cause::with('category')->get();
         return view('admin.pages.cause.list',compact('causelist'));
 
     }
     public function createCause()
+
     {
-        return view('admin.pages.cause.create');
+        $categories=Category::all();
+        return view('admin.pages.cause.create',compact('categories'));
     }
     public function storeCause(Request $req)
     {
@@ -29,7 +32,6 @@ class CauseController extends Controller
         }
         $req->validate([
             'name'=>'required',
-            'category'=>'required',
             'target_amount'=>'required',
             'details'=>'required',
             'location'=>'required',
@@ -39,9 +41,10 @@ class CauseController extends Controller
         ]);
 
         Cause::create([
+            
             'name'=>$req->name,
             'details'=>$req->details,
-            'category'=>$req->category,
+            'category_id'=>$req->category_id,
             'location'=>$req->location,
             'contact'=>$req->contact,
             'target_amount'=>$req->target_amount,
@@ -56,7 +59,7 @@ class CauseController extends Controller
     }
     public function viewCause($cause_id)
     {
-        $cause=Cause::find($cause_id);
+        $cause=Cause::with('category')->find($cause_id);
         return view('admin.pages.cause.view',compact('cause'));
 
     }
