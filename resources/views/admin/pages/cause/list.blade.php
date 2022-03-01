@@ -28,7 +28,7 @@
         <th scope="row">{{$key+1}}</th>
         <td>{{$causes->name}}</td>
         <td>{{$causes->details}}</td>
-        <td>{{$causes->category}}</td>
+        <td>{{$causes->category->name}}</td>
         <td>{{$causes->location}}</td>
         <td>{{$causes->contact}}</td>
         <td>{{$causes->target_amount}}</td>

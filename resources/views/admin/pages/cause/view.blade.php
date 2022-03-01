@@ -5,7 +5,7 @@
     <hr>
         <p>Name: {{$cause->name}}</p>
         <p>Details: {{$cause->details}}</p>
-        <p>Category: {{$cause->category}}</p>
+        <p>Category: {{$cause->category->name}}</p>
         <p>Location: {{$cause->location}}</p>
         <p>Contact Number: {{$cause->contact}}</p>
         <p>Amount: {{$cause->target_amount}}</p>
