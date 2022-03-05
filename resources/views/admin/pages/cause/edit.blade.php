@@ -1,6 +1,6 @@
 @extends('admin.master')
 @section('content')
-<h1>Cause Edit</h1>
+<h1>Update Cause Information</h1>
 <hr>
 
 

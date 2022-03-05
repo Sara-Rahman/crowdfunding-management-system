@@ -15,5 +15,7 @@ class AdminController extends Controller
         return view('website.donation.list');
     }
 
+   
+
     
 }
