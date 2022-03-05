@@ -2,7 +2,7 @@
 @section('content')
     
 
-<h1>Volunteer Registration</h1>
+<h1>Update Volunteer Information</h1>
 
 <form action="{{route('update.volunteer',$volunteers->id)}}" method="POST" enctype="multipart/form-data">
     

@@ -37,8 +37,12 @@ Route::get('/Edit/VolunteerProfile/{volunteer_id}',[VolunteerController::class,'
 Route::put('/Update/VolunteerProfile/{volunteer_id}',[VolunteerController::class,'UpdateVolunteerProfile'])->name('update.volunteer');
 Route::get('/deletevoluteer/{id}',[VolunteerController::class,'DeleteVolunteerProfile'])->name('delete.volunteer');
  
+
+Route::post('search', ['as' => 'search', 'uses' => 'AdminController@search']);
+
 //Category
-Route::get('/showcategory',[CategoryController::class,'showcategory'])->name('show.category');  
+Route::get('showcategory', 'CategoryController@showcategory')->name('show.category');;
+//Route::get('/showcategory',[CategoryController::class,'showcategory'])->name('show.category');  
 Route::get('/createcategory',[CategoryController::class,'creatcategory'])->name('create.category'); 
 Route::post('/storecategory',[CategoryController::class,'storecategory'])->name('store.category'); 
 Route::get('/viewcategory/{id}',[CategoryController::class,'Viewcategory'])->name('view.category'); 
@@ -51,7 +55,8 @@ Route::get('/deletecategoryr/{id}',[CategoryController::class,'Deletecategory'])
 Route::get('/cause',[CauseController::class,'cause'])->name('cause.list');
 Route::get('/create/cause',[CauseController::class,'createCause'])->name('create.cause');
 Route::post('/store/cause',[CauseController::class,'storeCause'])->name('store.cause');
-// cause view,update,delete
+
+// Cause view,update,delete
 Route::get('/view/cause/{cause_id}',[CauseController::class,'viewCause'])->name('view.cause');
 Route::get('/edit/cause/{cause_id}',[CauseController::class,'editCause'])->name('edit.cause');
 Route::put('/update/cause/{cause_id}',[CauseController::class,'updateCause'])->name('update.cause');
@@ -59,6 +64,7 @@ Route::get('/delete/cause/{cause_id}',[CauseController::class,'deleteCause'])->n
 
 
 Route::view('/', 'admin.master', ['name' => 'home']);
+// donor
 Route::get('/donorform', [DonorController::class, 'CreateDonor'])->name('create.donor');
 Route::post('/donorstore', [DonorController::class, 'StoreDonor'])->name('store.donor');
 Route::get('/donorlist', [DonorController::class, 'DonorList'])->name('list.donor');

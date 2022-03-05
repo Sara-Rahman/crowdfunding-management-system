@@ -1,7 +1,7 @@
 @extends('admin.master')
 @section('content')
 
-<h1>Donor Update</h1>
+<h1>Update Donor Information</h1>
 
 <form action="{{route('update.donor', $donor->id)}}" method="POST">
     @csrf

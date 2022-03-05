@@ -1,15 +1,6 @@
 <div class="navbar-custom">
     <ul class="list-unstyled topbar-menu float-end mb-0">
-        <li class="dropdown notification-list d-lg-none">
-            <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                <i class="dripicons-search noti-icon"></i>
-            </a>
-            <div class="dropdown-menu dropdown-menu-animated dropdown-lg p-0">
-                <form class="p-3">
-                    <input type="text" class="form-control" placeholder="Search ..." aria-label="Recipient's username">
-                </form>
-            </div>
-        </li>
+        
         <li class="dropdown notification-list topbar-dropdown">
             <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                 <img src="{{url('backend/images/flags/us.jpg')}}" alt="user-image" class="me-0 me-sm-1" height="12">
@@ -17,6 +8,10 @@
             </a>
             <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu">
 
+                <!-- item-->
+                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                    <img src="{{url('backend/images/flags/bangla.jpg')}}" alt="user-image" class="me-1" height="12"> <span class="align-middle">Bangla</span>
+                </a>
                 <!-- item-->
                 <a href="javascript:void(0);" class="dropdown-item notify-item">
                     <img src="{{url('backend/images/flags/germany.jpg')}}" alt="user-image" class="me-1" height="12"> <span class="align-middle">German</span>
@@ -191,8 +186,8 @@
                     <img src="{{url('backend/images/users/avatar-1.jpg')}}" alt="user-image" class="rounded-circle">
                 </span>
                 <span>
-                    <span class="account-user-name">Dominic Keller</span>
-                    <span class="account-position">Founder</span>
+                    <span class="account-user-name">Funding Bird</span>
+                    <span class="account-position">Happy Coding</span>
                 </span>
             </a>
             <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
