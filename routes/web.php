@@ -47,6 +47,7 @@ Route::put('/Update/category/{categoryr_id}',[CategoryController::class,'Updatec
 Route::get('/deletecategoryr/{id}',[CategoryController::class,'Deletecategory'])->name('delete.category'); 
 
 // Cause
+// Route::get('/cause','App\Http\Controllers\admin\CauseController@cause')->name('cause.list');
 Route::get('/cause',[CauseController::class,'cause'])->name('cause.list');
 Route::get('/create/cause',[CauseController::class,'createCause'])->name('create.cause');
 Route::post('/store/cause',[CauseController::class,'storeCause'])->name('store.cause');
