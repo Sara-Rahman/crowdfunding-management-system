@@ -558,7 +558,7 @@
         <!-- END wrapper -->
 
         <!-- Right Sidebar -->
-        <div class="end-bar">
+        {{-- <div class="end-bar">
             <div class="rightbar-title">
                 <a href="javascript:void(0);" class="end-bar-toggle float-end">
                     <i class="dripicons-cross noti-icon"></i>
@@ -566,7 +566,7 @@
                 <h5 class="m-0">Settings</h5>
             </div>
         
-        </div>
+        </div> --}}
 
         <div class="rightbar-overlay"></div>
         <!-- /End-bar -->
