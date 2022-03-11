@@ -15,9 +15,10 @@ return new class extends Migration
     {
         Schema::create('permissions', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('module_id')->constrained('Modules')->restictionOnDelete(); 
             $table->string('name');
             $table->string('slug');
-            $table->string('status');
+            $table->string('status')->default('active');
             $table->timestamps();
         });
     }
