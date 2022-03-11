@@ -2,13 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\HomeController;
+use App\Http\Controllers\admin\RoleController;
 use App\Http\Controllers\admin\AdminController;
-use App\Http\Controllers\admin\CategoryController;
-use App\Http\Controllers\admin\VolunteerController;
-use App\Http\Controllers\admin\UserController as AdminUserController;
 use App\Http\Controllers\admin\CauseController;
 use App\Http\Controllers\admin\DonorController;
 use App\Http\Controllers\website\UserController;
+use App\Http\Controllers\admin\CategoryController;
+use App\Http\Controllers\admin\VolunteerController;
+use App\Http\Controllers\admin\UserController as AdminUserController;
 
 
 /*
@@ -22,13 +23,24 @@ use App\Http\Controllers\website\UserController;
 |
 */
 
-
 Route::view('/admin', 'admin.master', ['name' => 'home']);
 
 
+
+//Role using 'resources'
+Route::resource('roles',RoleController::class);
+
+
+Route::controller(RoleController::class)->group(function () {
+    Route::get('/assign_permision/{role_id}','assignPermission')->name('assign.permission');
+    Route::post('/store_permision','storePermission')->name('store.permission');
+    Route::get('/assign_permision/edit','editPermission')->name('edit.permission');
+    Route::put('/assign_permision/update','updatePermission')->name('update.permission');
+});
+
 // Volunteer
 
-Route::controller(VolunteerController::class)->group(function () {
+    Route::controller(VolunteerController::class)->group(function () {
 
     Route::get('/showvoluteer','showVolunteer')->name('show.volunteer'); 
     Route::get('/createvoluteer','creatVolunteer')->name('create.volunteer'); 
