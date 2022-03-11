@@ -6,7 +6,7 @@
 {{-- <a href="{{route('create.ship')}}" --}}
  <a href="{{route('create.volunteer')}}" button type="submit" class="btn btn-primary">Create Volunteer</button> </a>
 
- <table class="table">
+ <table class="table" style="text-align: center;">
     <thead class="thead-dark">
       <tr>
         <th scope="col">ID</th>
@@ -31,10 +31,9 @@
         <td>{{$value->mobile}}</td>
         <td>{{$value->occupation}}</td>
        <td>
-          <a href="{{route('view.volunteer',$value->id)}}"><i class="fas fa-eye"></i></a> 
-          
-          <a href="{{route('edit.volunteer',$value->id)}}"><i class="fas fa-edit"></i></a>
-         <a href="{{route('delete.volunteer',$value->id)}}"><i class="fas fa-trash"></i></a>
+          <a class="btn btn-success btn-sm" href="{{route('view.volunteer',$value->id)}}"><i class="fas fa-eye"></i></a> 
+          <a class="btn btn-warning btn-sm" href="{{route('edit.volunteer',$value->id)}}"><i class="fas fa-edit"></i></a>
+          <a class="btn btn-danger btn-sm" href="{{route('delete.volunteer',$value->id)}}"><i class="fas fa-trash"></i></a>
          
 
         </td> 

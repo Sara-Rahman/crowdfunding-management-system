@@ -2,12 +2,11 @@
 @section('content')
 <h1>Cause List</h1>
 <hr>
-<a href="{{route('create.cause')}}"><button class="btn btn-primary">Create Cause</button></a><br><br>
-
-
+<a href="{{route('create.cause')}}"><button class="btn btn-primary">Create Cause</button></a>
+<br><br>
 <div> 
-<table class="table table-bordered">
-    <thead>
+  <table class="table" style="text-align: center;">
+    <thead class="thead-dark">
       <tr>
       <th scope="col">ID</th>
       <th scope="col">Name</th>
@@ -35,9 +34,9 @@
         <td><img src="{{url('/uploads/causes/'.$causes->image)}}" style="border-radius:4px" width="100px" alt="cause image"></td>
       <td>{{$causes->created_at->diffforhumans()}}</td>
         <td>
-          <a href="{{route('view.cause',$causes->id)}}"><i class="fa-solid fa-eye"></i></a>
-          <a href="{{route('edit.cause',$causes->id)}}"><i class="fas fa-edit"></i></a>
-          <a href="{{route('delete.cause',$causes->id)}}"><i class="fas fa-trash"></i></a>
+          <a class="btn btn-success btn-sm" href="{{route('view.cause',$causes->id)}}"><i class="fa-solid fa-eye"></i></a>
+          <a class="btn btn-warning btn-sm" href="{{route('edit.cause',$causes->id)}}"><i class="fas fa-edit"></i></a>
+          <a class="btn btn-danger btn-sm" href="{{route('delete.cause',$causes->id)}}"><i class="fas fa-trash"></i></a>
       </td>
         </td>
       </tr>

@@ -25,8 +25,11 @@ use App\Http\Controllers\admin\UserController as AdminUserController;
 
 Route::view('/admin', 'admin.master', ['name' => 'home']);
 
+
+
 //Role using 'resources'
 Route::resource('roles',RoleController::class);
+
 
 Route::controller(RoleController::class)->group(function () {
     Route::get('/assign_permision/{role_id}','assignPermission')->name('assign.permission');

@@ -22,8 +22,8 @@
 
 
 <div>
-    <table class="table table-bordered">
-        <thead>
+    <table class="table" style="text-align: center;">
+        <thead class="thead-dark">
             <th scope="col">ID</th>
             <th scope="col">Name</th>
             <th scope="col">Email</th>
@@ -48,9 +48,9 @@
                 <td>{{$item->occupation}}</td>
                 <td><img src="{{url('/uploads/donors/'.$item->image)}}" style="border-radius:4px" width="100px" alt="donor image"></td>   
                 <td>
-                    <a href="{{route('view.donor',$item->id)}}"><i class="fas fa-eye"></i></a>
-                    <a href="{{route('edit.donor',$item->id)}}"><i class="fas fa-edit"></i></a>
-                    <a href="{{route('delete.donor',$item->id)}}"><i class="fas fa-trash"></i></a>
+                    <a class="btn btn-success btn-sm" href="{{route('view.donor',$item->id)}}"><i class="fas fa-eye"></i></a>
+                    <a class="btn btn-warning btn-sm" href="{{route('edit.donor',$item->id)}}"><i class="fas fa-edit"></i></a>
+                    <a class="btn btn-danger btn-sm" href="{{route('delete.donor',$item->id)}}"><i class="fas fa-trash"></i></a>
                 </td>
             </tr>
             @endforeach
