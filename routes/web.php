@@ -23,7 +23,7 @@ use App\Http\Controllers\website\UserController;
 */
 
 
-Route::view('/admin', 'admin.login', ['name' => 'home']);
+Route::view('/admin', 'admin.master', ['name' => 'home']);
 
 
 // Volunteer
