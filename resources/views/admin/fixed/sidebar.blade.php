@@ -119,6 +119,18 @@
             </li>
 
             <li class="side-nav-title side-nav-item">Custom</li>
+            <li class="side-nav-item">
+                <a href="{{route('roles.index')}}" class="side-nav-link">
+                    <i class="uil-folder-plus"></i>
+                    <span> Role </span>
+                </a>
+            </li>
+            <li class="side-nav-item">
+                <a href="apps-file-manager.html" class="side-nav-link">
+                    <i class="uil-folder-plus"></i>
+                    <span> Demo </span>
+                </a>
+            </li>
 
             <li class="side-nav-item">
                 <a data-bs-toggle="collapse" href="#sidebarPages" aria-expanded="false" aria-controls="sidebarPages" class="side-nav-link">
