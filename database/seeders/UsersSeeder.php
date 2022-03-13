@@ -21,7 +21,6 @@ class UsersSeeder extends Seeder
                 'name'=>'admin',
                 'slug'=>'login of admin',
             ]
-
             );
 
             

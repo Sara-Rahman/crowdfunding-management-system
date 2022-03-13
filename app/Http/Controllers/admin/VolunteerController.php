@@ -26,11 +26,7 @@ class VolunteerController extends Controller
     //Creating Volunter through Form
     public function creatVolunteer()
     {
-     
-
       return view('admin.pages.volunteer.create');
-
- 
      }
 
      //storing Volunter Data through Form

@@ -103,15 +103,11 @@ class RoleController extends Controller
     }
     public function storePermission(Request $request)
     {
-        
-
         foreach ($request->assign_permissions as $permission)
         {
-            
             RolePermission::create([
                 'role_id'=>$request->role_id,
                 'permission_id'=>$permission,
-                
             ]);
         }
         return redirect()->route('roles.index');
