@@ -1,26 +1,10 @@
 @extends('admin.master')
 @section('content')
-<h1>Donor List</h1>
+
+<h1>Donors</h1>
 <hr>
-<a href="{{route('create.donor')}}" class="btn btn-primary">Create Donor</a><br><br>
-
-        @if(session()->has('message'))
-        
-            <p class="alert alert-success">
-                {{session()->get('message')}}
-            </p>
-        
-        @elseif(session()->has('delete'))
-        
-            <p class="alert alert-danger">
-                {{session()->get('delete')}}
-            </p>
-        
-        @else
-        
-        @endif
-
-
+<a href="{{route('create.donor')}}" class="btn btn-primary">Create Donor</a>
+<br><br>
 <div>
     <table class="table" style="text-align: center;">
         <thead class="thead-dark">

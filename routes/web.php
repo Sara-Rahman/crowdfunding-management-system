@@ -43,7 +43,7 @@ Route::controller(RoleController::class)->group(function () {
     Route::controller(VolunteerController::class)->group(function () {
 
     Route::get('/showvoluteer','showVolunteer')->name('show.volunteer'); 
-    Route::get('/createvoluteer','creatVolunteer')->name('create.volunteer'); 
+    Route::get('/createvolunteer','creatVolunteer')->name('create.volunteer'); 
     Route::post('/storevoluteer','storeVolunteer')->name('store.volunteer'); 
     Route::get('/viewvoluteer/{id}','ViewVolunteerProfile')->name('view.volunteer'); 
     Route::get('/Edit/VolunteerProfile/{volunteer_id}','editVolunteerProfile')->name('edit.volunteer');

@@ -51,6 +51,13 @@
             </li>
 
             <li class="side-nav-title side-nav-item">Apps</li>
+            
+            <li class="side-nav-item">
+                <a href="{{route('roles.index')}}" class="side-nav-link">
+                    <i class="uil-folder-plus"></i>
+                    <span> Role </span>
+                </a>
+            </li>
 
             <li class="side-nav-item">
                 <a href="{{route('show.category')}}" class="side-nav-link">
@@ -119,12 +126,7 @@
             </li>
 
             <li class="side-nav-title side-nav-item">Custom</li>
-            <li class="side-nav-item">
-                <a href="{{route('roles.index')}}" class="side-nav-link">
-                    <i class="uil-folder-plus"></i>
-                    <span> Role </span>
-                </a>
-            </li>
+            
             <li class="side-nav-item">
                 <a href="apps-file-manager.html" class="side-nav-link">
                     <i class="uil-folder-plus"></i>
