@@ -44,7 +44,7 @@ class ModulesTableSeeder extends Seeder
           //for donor
           $check_donor=Module::where('name','Donor')->first();
           if(!$check_donor)
-          {
+            {
             $module=  Module::create([
                  'name'=>'Donor',
               ]);
@@ -61,6 +61,53 @@ class ModulesTableSeeder extends Seeder
                   ]);
               }
  
-          }
+            }
+
+            //for category
+            $check_category=Module::where('name','Category')->first();
+            if(!$check_category)
+            {
+            $module=  Module::create([
+                 'name'=>'Category',
+              ]);
+              
+              //Donor permissions
+              $cat_permissions=['show.category','create.category','store.category','view.category','edit.category','update.category','delete.category'];
+              
+              foreach( $cat_permissions as $permission )
+                {
+                  Permission::create([
+                      'module_id'=>$module->id,
+                      'name'=>$permission,
+                      'slug'=>Str::slug($permission)
+                  ]);
+                }
+ 
+            }
+
+            //for cause
+            $check_cause=Module::where('name','Cause')->first();
+            if(!$check_cause)
+            {
+            $module=  Module::create([
+                 'name'=>'Cause',
+              ]);
+              
+              //Donor permissions
+              $cause_per=['cause.list','create.cause','store.cause','view.cause','edit.cause','update.cause','delete.cause'];
+              
+              foreach($cause_per as $permission )
+                {
+                  Permission::create([
+                      'module_id'=>$module->id,
+                      'name'=>$permission,
+                      'slug'=>Str::slug($permission)
+                  ]);
+                }
+ 
+            }
+
+            
+         
     }
 }
