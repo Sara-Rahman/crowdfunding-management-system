@@ -26,9 +26,9 @@ class ModulesTableSeeder extends Seeder
                 'name'=>'Volunteer',
              ]);
 
-             //Volunteers permission
+             //Volunteers permissions
              $events=['show.volunteer','create.volunteer','store.volunteer','view.volunteer','edit.volunteer','update.volunteer','delete.volunteer'];
-             
+
              foreach( $events as $permission )
              {
                  Permission::create([
@@ -47,10 +47,10 @@ class ModulesTableSeeder extends Seeder
             $module=  Module::create([
                  'name'=>'Donor',
               ]);
-              
+
               //Donor permissions
               $don_permissions=['create.donor','store.donor','list.donor','view.donor','edit.donor','update.donor','delete.donor'];
-              
+
               foreach( $don_permissions as $permission )
               {
                   Permission::create([
@@ -59,7 +59,7 @@ class ModulesTableSeeder extends Seeder
                       'slug'=>Str::slug($permission)
                   ]);
               }
- 
+
             }
 
             //for category
@@ -69,10 +69,10 @@ class ModulesTableSeeder extends Seeder
             $module=  Module::create([
                  'name'=>'Category',
               ]);
-              
+
               //Donor permissions
               $cat_permissions=['show.category','create.category','store.category','view.category','edit.category','update.category','delete.category'];
-              
+
               foreach( $cat_permissions as $permission )
                 {
                   Permission::create([
@@ -81,7 +81,7 @@ class ModulesTableSeeder extends Seeder
                       'slug'=>Str::slug($permission)
                   ]);
                 }
- 
+
             }
 
             //for cause
@@ -91,10 +91,10 @@ class ModulesTableSeeder extends Seeder
             $module=  Module::create([
                  'name'=>'Cause',
               ]);
-              
+
               //Donor permissions
               $cause_per=['cause.list','create.cause','store.cause','view.cause','edit.cause','update.cause','delete.cause'];
-              
+
               foreach($cause_per as $permission )
                 {
                   Permission::create([
@@ -103,10 +103,10 @@ class ModulesTableSeeder extends Seeder
                       'slug'=>Str::slug($permission)
                   ]);
                 }
- 
+
             }
 
-            
-         
+
+
     }
 }
