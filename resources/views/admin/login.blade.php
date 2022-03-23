@@ -57,13 +57,13 @@ body{
     background: #2ecc71;
   }
   .alert{position:relative;padding:.75rem 1.25rem;margin-left: 450px; margin-right: 450px;margin-bottom:1rem;border:1px solid transparent;border-radius:3.25rem}
-  
+
   .alert-warning{color:#806013;background-color:#fdf1d3;border-color:#fdebc2}
   .alert-warning hr{border-top-color:#fce3a9}
   .alert-warning .alert-link{color:#543f0c}
 
   </style>
-  
+
 
                     @if(session()->has('invalid'))
                         <p class="alert alert-warning">
@@ -78,7 +78,7 @@ body{
           @foreach ($errors->all() as $error)
               <li>{{$error}}</li>
           @endforeach
-      </ul> 
+      </ul>
   </div>
 
   @endif
@@ -87,7 +87,7 @@ body{
   <form class="box" action="#"  method="post">
 
     @csrf
-    <h1>Login</h1>
+    <h1>Login Page</h1>
     <input type="text" name="email" placeholder="Username">
     <input type="password" name="password" placeholder="Password">
     <input type="submit" name="" value="Login">

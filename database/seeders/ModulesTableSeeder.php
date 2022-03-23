@@ -23,7 +23,6 @@ class ModulesTableSeeder extends Seeder
          if(!$check_volunteer)
          {
            $module=  Module::create([
-
                 'name'=>'Volunteer',
              ]);
 
