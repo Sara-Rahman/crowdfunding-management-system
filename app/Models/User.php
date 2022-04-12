@@ -19,10 +19,14 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'role_id',
         'email',
         'password',
-        'mobile',
+        'facebook_id',
         'role',
+        'reset_token',
+        'reset_token_expire_at',
+
     ];
 
     /**
