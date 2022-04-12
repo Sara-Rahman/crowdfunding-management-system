@@ -9,6 +9,7 @@ use App\Http\Controllers\admin\DonorController;
 use App\Http\Controllers\website\UserController;
 use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\admin\VolunteerController;
+use App\Http\Controllers\admin\PasswordController;
 use App\Http\Controllers\admin\UserController as AdminUserController;
 
 
@@ -23,8 +24,29 @@ use App\Http\Controllers\admin\UserController as AdminUserController;
 |
 */
 
-Route::view('/admin', 'admin.master', ['name' => 'home']);
+// Login
 
+Route::get('/admin/login',[AdminController::class,'formlogin'])->name('admin.login');
+Route::post('/check/login',[AdminController::class,'doLogin'])->name('admin.doLogin');
+
+//Forget Password
+
+Route::get('/admin/forget_password/email',[PasswordController::class,'forgetpasswordemail'])->name('forget.email');
+Route::post('/admin/forget_password/email',[PasswordController::class,'check_forgetpasswordemail'])->name('check_forget.email');
+Route::get('/admin/reset-password/{token}', [PasswordController::class, 'resetPassword'])->name('reset.password');
+Route::post('/admin/reset-password', [PasswordController::class, 'resetPasswordPost'])->name('submit_reset.password');
+
+
+
+//Login with Facebook
+Route::get('auth/facebook', [AdminController::class, 'facebookRedirect'])->name('login.facebook');
+Route::get('auth/facebook/callback', [AdminController::class, 'loginWithFacebook']);
+
+Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
+
+// Route::view('/admin', 'admin.master', ['name' => 'home']);
+Route::get('/home', [AdminController::class, 'index'])->name('admin.index');
+Route::get('/admin/logout', [AdminController::class, 'logout'])->name('admin.logout');
 
 
 //Role using 'resources'
@@ -34,8 +56,8 @@ Route::resource('roles',RoleController::class);
 Route::controller(RoleController::class)->group(function () {
     Route::get('/assign_permision/{role_id}','assignPermission')->name('assign.permission');
     Route::post('/store_permision','storePermission')->name('store.permission');
-    Route::get('/assign_permision/edit','editPermission')->name('edit.permission');
-    Route::put('/assign_permision/update','updatePermission')->name('update.permission');
+    Route::get('/assign_permision/edit/{role_id}','editPermission')->name('edit.permission');
+    Route::put('/assign_permision','updatePermission')->name('update.permission');
 });
 
 // Volunteer
@@ -112,4 +134,4 @@ Route::controller(DonorController::class)->group(function () {
 
 Route::get('/donationform', [AdminController::class, 'CreateDonation'])->name('create.donation');
 
-
+});

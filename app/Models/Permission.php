@@ -10,5 +10,9 @@ class Permission extends Model
 {
     use HasFactory;
     protected $guarded=[];
+    public function role_permission()
+    {
+        return $this->hasMany (RolePermission::class);
+    }
     
 }

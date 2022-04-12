@@ -31,7 +31,7 @@ class UsersSeeder extends Seeder
                 'email'=>'nowshin1@gmail.com',
                 'password'=>bcrypt('12345'),
                 'mobile'=>'01727265497',
-                'role'=>'admin'
+                
               
             ]
         );

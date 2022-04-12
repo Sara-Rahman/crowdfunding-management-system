@@ -84,11 +84,28 @@ body{
   @endif
 
 
-  <form class="box" action="#"  method="post">
+  <form  class="box" action="{{route('admin.doLogin')}}"  method="post">
 
     @csrf
     <h1>Login Page</h1>
     <input type="text" name="email" placeholder="Username">
     <input type="password" name="password" placeholder="Password">
+
+    <input type="submit"  value="Login">
+    <div>
+      <a href="{{route('forget.email')}}" class="txt3">
+          Forgot Password?
+      </a>
+  </div>
+
+    <a href="{{route('login.facebook')}}" class="btn btn-primary">
+      <i class="fa-brands fa-facebook"></i>
+      Login With Facebook</a>
+  {{-- <a href="{{route('login.facebook')}}" input type="submit"  value="Login with Facebook"> </a> --}}
+  </div>
+
+  </form>
+
     <input type="submit" name="" value="Login">
   </form>
+

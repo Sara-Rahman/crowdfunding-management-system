@@ -19,7 +19,7 @@
         <link href="{{url('backend/css/app-dark.min.css')}}" rel="stylesheet" type="text/css" id="dark-style" />
 
         <!-- font awesome cdn-->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
 
         <!-- toastr cdn -->
          <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
