@@ -7,9 +7,14 @@ use App\Models\User;
 use App\Models\Donor;
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\App;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Spatie\DbDumper\Databases\MySql;
 use Laravel\Socialite\Facades\Socialite;
+
+// composer require spatie/db-dumper
+
 
 class AdminController extends Controller
 {
@@ -77,18 +82,48 @@ class AdminController extends Controller
    
     public function doLogin(Request $req)
     {
+        // dd("ok");
         $userInfo=$req->except('_token');
 
-        if(Auth::attempt($userInfo)){
+        if ( Auth::guard('web')->attempt([ 'email'=>$req->email,'password'=>$req->password])|| Auth::guard('volunteer')->attempt([ 'email'=>$req->email,'password'=>$req->password])) {
             return redirect()->route('admin.index')->with('message','Login successful.');
         }
+        else{
+       
         return redirect()->back()->with('error','Invalid user credentials');
+        }
     }
     public function logout()
     {
         Auth::logout();
         return redirect()->route('admin.login')->with('message','Logged out.');
     }
+   
+    public function export()
+    {
+        // dd(config('database.connections.mysql.database'));
+     
+        MySql::create()
+        ->setDbName(config('database.connections.mysql.database'))
+        ->setUserName(config('database.connections.mysql.username'))
+        ->setPassword(config('database.connections.mysql.password'))
+        ->dumpToFile('cfms.sql');
+
+    return response()->download(public_path('/cfms.sql'));
+    }
+
+
+    public function doLocalization($locale)
+    
+
+        {
+            // dd($locale);
+            App::setLocale($locale);
+            session()->put('applocale', $locale);
+            // dd($locale);
+            return redirect()->back();
+        }
+
    
 
     

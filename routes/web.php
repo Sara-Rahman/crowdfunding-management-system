@@ -42,7 +42,7 @@ Route::post('/admin/reset-password', [PasswordController::class, 'resetPasswordP
 Route::get('auth/facebook', [AdminController::class, 'facebookRedirect'])->name('login.facebook');
 Route::get('auth/facebook/callback', [AdminController::class, 'loginWithFacebook']);
 
-Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
+Route::group(['prefix'=>'admin','middleware'=>'auth:web,volunteer'],function() {
 
 // Route::view('/admin', 'admin.master', ['name' => 'home']);
 Route::get('/home', [AdminController::class, 'index'])->name('admin.index');
@@ -128,6 +128,15 @@ Route::controller(DonorController::class)->group(function () {
     Route::get('/donoredit/{donor_id}','DonorEdit')->name('edit.donor');
     Route::put('/donorupdate/{donor_id}','DonorUpdate')->name('update.donor');
     Route::get('/donordelete/{donor_id}','DonorDelete')->name('delete.donor');
+
+    //Export
+    Route::get('/export', [AdminController::class, 'export'])->name('admin.export');
+
+    //locatization
+
+    Route::get('/language/{locale}', [AdminController::class, 'doLocalization'])->name('language');
+    
+
 
 });
 
