@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\Role;
+use App\Models\Volunteer;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-class RoleSeeder extends Seeder
+class VolunteerSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,6 +15,6 @@ class RoleSeeder extends Seeder
      */
     public function run()
     {
-        Role::factory()->count(100)->create();
+        Volunteer::factory()->count(100)->create();
     }
 }

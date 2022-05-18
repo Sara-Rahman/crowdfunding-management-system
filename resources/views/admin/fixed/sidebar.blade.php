@@ -62,7 +62,7 @@
             <li class="side-nav-item">
                 <a href="{{route('show.category')}}" class="side-nav-link">
                     <i class="uil-copy-alt"></i>
-                   <span> Category </span>
+                   <span>{{__("Category")}}  </span>
                 </a>
             </li>
             <li class="side-nav-item">
@@ -74,7 +74,7 @@
             <li class="side-nav-item">
                 <a href="{{route('list.donor')}}" class="side-nav-link">
                     <i class="uil-copy-alt"></i>
-                   <span> Donor </span>
+                   <span>{{__("Donor")}}  </span>
                 </a>
             </li>
 
@@ -92,7 +92,13 @@
                 </a>
             </li>
 
-            
+            <li class="side-nav-item">
+                <a href="{{route('admin.export')}}" class="side-nav-link">
+                    <i class="uil-comments-alt"></i>
+                    <span> Export Db </span>
+                </a>
+            </li>
+
 
             
 

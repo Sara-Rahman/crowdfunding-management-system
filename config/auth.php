@@ -40,6 +40,11 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'volunteer' => [
+            'driver' => 'session',
+            'provider' => 'volunteers',
+        ],
+       
     ],
 
     /*
@@ -69,6 +74,12 @@ return [
         //     'driver' => 'database',
         //     'table' => 'users',
         // ],
+
+        'volunteers' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Volunteer::class,
+        ],
+       
     ],
 
     /*
@@ -89,6 +100,12 @@ return [
     'passwords' => [
         'users' => [
             'provider' => 'users',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+        'volunteers' => [
+            'provider' => 'volunteers',
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,

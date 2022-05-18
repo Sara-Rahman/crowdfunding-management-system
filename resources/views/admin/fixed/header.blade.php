@@ -1,7 +1,7 @@
 <div class="navbar-custom">
     <ul class="list-unstyled topbar-menu float-end mb-0">
         
-        <li class="dropdown notification-list topbar-dropdown">
+        {{-- <li class="dropdown notification-list topbar-dropdown">
             <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                 <img src="{{url('backend/images/flags/us.jpg')}}" alt="user-image" class="me-0 me-sm-1" height="12">
                 <span class="align-middle d-none d-sm-inline-block">English</span> <i class="mdi mdi-chevron-down d-none d-sm-inline-block align-middle"></i>
@@ -33,7 +33,14 @@
                 </a>
 
             </div>
-        </li>
+        </li> --}}
+                 
+                    <select style="margin-top: 10px; padding: 6px;" size="1" name="links" onchange="window.location.href=this.value;">
+                        <option value="">{{__('Select Language')}}</option>
+                        <option value="{{route('language','en')}}">{{__('English')}}</option>
+                        <option value="{{route('language','bn')}}">{{__('Bengali')}}</option>
+                    </select>
+                
 
         <li class="dropdown notification-list">
             <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
@@ -219,6 +226,9 @@
                     <i class="mdi mdi-lock-outline me-1"></i>
                     <span>Lock Screen</span>
                 </a>
+                //localization
+
+       
 
                 <!-- item-->
                 <a href="{{route('admin.logout')}}" class="dropdown-item notify-item">
