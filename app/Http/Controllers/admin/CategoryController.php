@@ -4,9 +4,13 @@ namespace App\Http\Controllers\admin;
 
 use App\Models\Category;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use App\Events\CategoryCreateEvent;
 
+use App\Http\Controllers\Controller;
 use Brian2694\Toastr\Facades\Toastr;
+use Illuminate\Support\Facades\Cache;
+use App\Http\Requests\CategoryRequest;
+use App\Repositories\CategoryRepository;
 
 
 class CategoryController extends Controller
@@ -15,10 +19,22 @@ class CategoryController extends Controller
 
      public function showcategory()
      {
+
+      if(Cache::has('Categories'))
+      {
+        $category=Cache::get('Categories');
+        $msg='Data from Cache';
+      
+      }
+      else{
       
          $category=Category::all();
+         Cache::put('Categories', $category);
+         $msg='Data from Database';
 
-       return view('admin.pages.category.list',compact('category'));
+        }
+
+       return view('admin.pages.category.list',compact('category','msg'));
 
       }
  
@@ -32,24 +48,22 @@ class CategoryController extends Controller
       }
  
       //storing Category Data through Form
-     public function storecategory(Request $request)
+     public function storecategory(CategoryRequest $request,CategoryRepository $category)
      {
       
         {
            
-            $request->validate([
-              'name'=>'required',
-              'details'=>'required',
-            ]);
+            // $request->validate([
+            //   'name'=>'required',
+            //   'details'=>'required',
+            // ]);
 
-        Category::create([
-             'name'=>$request->name,
-             'details'=>$request->details,
-         ]);
-
+       
+            // event constructor variable is called
+          $a=$category->storecategory($request);
+          event(new CategoryCreateEvent($a));
          Toastr::success('Category Created Successfully', 'success');
-
-         return redirect()->route('show.category')->with('success','Category  has been created successfully.');
+         return redirect()->route('show.category');
 
         }
   

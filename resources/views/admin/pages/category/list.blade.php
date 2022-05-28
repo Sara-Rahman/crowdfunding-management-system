@@ -1,5 +1,7 @@
 @extends('admin.master')
 @section('content')
+<button type="submit" class="btn btn-success btn-sm mt-2" style="text-align:right;">{{$msg}}</button>
+<br>
 
 <h1>Categories</h1>
 <hr>

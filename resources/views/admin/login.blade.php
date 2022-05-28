@@ -88,7 +88,7 @@ body{
 
     @csrf
     <h1>Login Page</h1>
-    <input type="text" name="email" placeholder="Username">
+    <input type="tet" name="email" placeholder="Username">
     <input type="password" name="password" placeholder="Password">
 
     <input type="submit"  value="Login">
@@ -100,7 +100,7 @@ body{
 
     <a href="{{route('login.facebook')}}" class="btn btn-primary">
       <i class="fa-brands fa-facebook"></i>
-      Login With Facebook</a>
+      Login With Facebgook</a>
   {{-- <a href="{{route('login.facebook')}}" input type="submit"  value="Login with Facebook"> </a> --}}
   </div>
 
